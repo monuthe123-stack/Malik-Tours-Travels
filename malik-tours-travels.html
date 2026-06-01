@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Malik Tours & Travels offers fast, reliable and affordable Umrah visa processing for individuals, families and groups in Satna, Madhya Pradesh." />
+  <meta name="keywords" content="Umrah visa, Umrah visa processing, Malik Tours and Travels, Satna travel agency, Umrah family visa, group Umrah visa" />
+  <meta name="author" content="Malik Tours & Travels" />
+  <meta property="og:title" content="Malik Tours & Travels - Umrah Visa Processing" />
+  <meta property="og:description" content="Fast, reliable and affordable Umrah visa processing service for families, friends and groups." />
+  <meta property="og:type" content="website" />
+  <title>Malik Tours & Travels | Umrah Visa Processing Service</title>
+  <style>
+    :root {
+      --emerald: #062f25;
+      --emerald-2: #0a4a38;
+      --emerald-3: #0f6a50;
+      --gold: #d8b45a;
+      --gold-2: #fff0b8;
+      --white: #ffffff;
+      --mist: rgba(255,255,255,.76);
+      --glass: rgba(255,255,255,.1);
+      --glass-strong: rgba(255,255,255,.16);
+      --ink: #10221d;
+      --shadow: 0 24px 70px rgba(0,0,0,.32);
+      --radius: 8px;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--emerald);
+    }
+
+    body {
+      min-width: 320px;
+      color: var(--white);
+      font-family: var(--sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(216,180,90,.2), transparent 24rem),
+        radial-gradient(circle at 88% 8%, rgba(255,255,255,.09), transparent 18rem),
+        linear-gradient(145deg, #031813 0%, #062f25 42%, #071f1a 100%);
+    }
+
+    body.loading {
+      overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle, rgba(216,180,90,.18), transparent 18rem),
+        #041c17;
+      transition: opacity .55s ease, visibility .55s ease;
+    }
+
+    .preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-mark {
+      position: relative;
+      width: 84px;
+      height: 84px;
+      border: 1px solid rgba(216,180,90,.3);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold-2);
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      letter-spacing: 0;
+      box-shadow: 0 0 34px rgba(216,180,90,.24);
+    }
+
+    .loader-mark::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: inherit;
+      border: 2px solid transparent;
+      border-top-color: var(--gold);
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 40;
+      padding: 14px clamp(16px, 4vw, 54px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      background: linear-gradient(180deg, rgba(3,22,18,.78), rgba(3,22,18,.1));
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-icon {
+      width: 44px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      color: #062f25;
+      background: linear-gradient(145deg, var(--gold-2), var(--gold));
+      box-shadow: 0 0 32px rgba(216,180,90,.33);
+      font-family: var(--serif);
+      font-weight: 700;
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: 1.1;
+    }
+
+    .brand-text strong {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 2.8vw, 1.25rem);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand-text span {
+      color: rgba(255,255,255,.72);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .nav {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      color: rgba(255,255,255,.78);
+      font-size: .92rem;
+    }
+
+    .nav a {
+      transition: color .25s ease;
+    }
+
+    .nav a:hover {
+      color: var(--gold-2);
+    }
+
+    .header-call {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-height: 40px;
+      padding: 0 16px;
+      border: 1px solid rgba(216,180,90,.45);
+      border-radius: 999px;
+      color: var(--gold-2);
+      background: rgba(255,255,255,.07);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: center;
+      padding: 116px clamp(18px, 5vw, 76px) 64px;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        linear-gradient(90deg, rgba(2,18,15,.94) 0%, rgba(4,31,25,.72) 48%, rgba(4,24,20,.84) 100%),
+        url("https://upload.wikimedia.org/wikipedia/commons/c/c1/Masjid_al-Haram%2C_Tawaf_20092012_1130PM_%288008466944%29.jpg") center/cover;
+      transform: translateY(var(--parallax, 0px)) scale(1.06);
+      filter: saturate(1.06) contrast(1.08);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -12% -20% -12%;
+      height: 44%;
+      z-index: -2;
+      background: radial-gradient(ellipse at center, rgba(216,180,90,.18), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(780px, 100%);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--gold-2);
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    .kicker::before,
+    .kicker::after {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+    }
+
+    .kicker::after {
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+
+    h1 {
+      max-width: 12ch;
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: clamp(3.15rem, 11vw, 6.9rem);
+      line-height: .92;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-shadow: 0 20px 48px rgba(0,0,0,.44);
+    }
+
+    .hero-subtitle {
+      max-width: 680px;
+      margin-top: 24px;
+      color: rgba(255,255,255,.86);
+      font-size: clamp(1.08rem, 2.8vw, 1.42rem);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 800;
+      overflow: hidden;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .btn svg {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 auto;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      color: #08271f;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      box-shadow: 0 16px 40px rgba(216,180,90,.28);
+    }
+
+    .btn-secondary {
+      color: var(--white);
+      background: rgba(255,255,255,.1);
+      border-color: rgba(255,255,255,.24);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      width: min(520px, 100%);
+      margin-top: 44px;
+    }
+
+    .proof-pill {
+      padding: 14px 15px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.09);
+      backdrop-filter: blur(16px);
+      color: rgba(255,255,255,.82);
+      box-shadow: 0 16px 42px rgba(0,0,0,.18);
+    }
+
+    .proof-pill strong {
+      display: block;
+      color: var(--gold-2);
+      font-size: 1.1rem;
+    }
+
+    .lanterns {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .lantern {
+      --size: 48px;
+      position: absolute;
+      top: var(--top);
+      left: var(--left);
+      width: var(--size);
+      height: calc(var(--size) * 1.34);
+      border: 1px solid rgba(255,240,184,.5);
+      border-radius: 42% 42% 45% 45%;
+      background:
+        radial-gradient(circle at 50% 68%, rgba(255,226,130,.7), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,.12), rgba(216,180,90,.1));
+      box-shadow: 0 0 28px rgba(216,180,90,.26), inset 0 0 22px rgba(216,180,90,.18);
+      opacity: .75;
+      animation: floatLantern var(--speed) ease-in-out infinite;
+    }
+
+    .lantern::before,
+    .lantern::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,240,184,.55);
+    }
+
+    .lantern::before {
+      top: -15px;
+      width: 42%;
+      height: 16px;
+      border: 1px solid rgba(255,240,184,.36);
+      border-bottom: 0;
+      border-radius: 50% 50% 0 0;
+      background: transparent;
+    }
+
+    .lantern::after {
+      bottom: -10px;
+      width: 2px;
+      height: 12px;
+      box-shadow: 0 0 10px var(--gold);
+    }
+
+    @keyframes floatLantern {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+      50% { transform: translate3d(12px, -26px, 0) rotate(4deg); }
+    }
+
+    section {
+      position: relative;
+      padding: clamp(72px, 10vw, 118px) clamp(18px, 5vw, 76px);
+      scroll-margin-top: 72px;
+    }
+
+    .section-inner {
+      width: min(1160px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-eyebrow {
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: clamp(2.05rem, 6vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin-top: 16px;
+      color: rgba(255,255,255,.72);
+      font-size: 1.02rem;
+    }
+
+    .panel-light {
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 5% 10%, rgba(216,180,90,.24), transparent 20rem),
+        linear-gradient(180deg, #f8fbf8 0%, #eef5ef 100%);
+    }
+
+    .panel-light h2 {
+      color: var(--emerald);
+    }
+
+    .panel-light .section-head p {
+      color: rgba(16,34,29,.68);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .service-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .glass-card {
+      position: relative;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.07));
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: radial-gradient(circle at 20% 0%, rgba(255,240,184,.28), transparent 35%);
+      opacity: 0;
+      transition: opacity .3s ease;
+      pointer-events: none;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(216,180,90,.52);
+      box-shadow: 0 28px 80px rgba(0,0,0,.42);
+    }
+
+    .glass-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card {
+      padding: clamp(24px, 4vw, 36px);
+    }
+
+    .card-icon {
+      width: 58px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      color: #08271f;
+      background: linear-gradient(145deg, var(--gold-2), var(--gold));
+      box-shadow: 0 0 30px rgba(216,180,90,.22);
+    }
+
+    .card-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .service-card h3,
+    .doc-card h3,
+    .testimonial-card h3 {
+      position: relative;
+      color: var(--white);
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .feature-list {
+      position: relative;
+      display: grid;
+      gap: 12px;
+      list-style: none;
+      color: rgba(255,255,255,.78);
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .feature-list span {
+      color: var(--gold-2);
+      font-weight: 900;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat-card {
+      min-height: 148px;
+      padding: 22px 16px;
+      display: grid;
+      align-content: center;
+      text-align: center;
+      border: 1px solid rgba(6,47,37,.12);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.68);
+      box-shadow: 0 16px 45px rgba(6,47,37,.09);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 58px rgba(6,47,37,.14);
+    }
+
+    .stat-value {
+      color: var(--emerald);
+      font-family: var(--serif);
+      font-size: clamp(2.1rem, 6vw, 3.5rem);
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .stat-label {
+      margin-top: 10px;
+      color: rgba(16,34,29,.68);
+      font-weight: 800;
+    }
+
+    .documents {
+      background:
+        linear-gradient(180deg, rgba(4,30,24,.95), rgba(7,37,31,.98)),
+        radial-gradient(circle at 80% 20%, rgba(216,180,90,.18), transparent 20rem);
+    }
+
+    .doc-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .doc-card {
+      min-height: 250px;
+      padding: 28px;
+      cursor: pointer;
+    }
+
+    .doc-card p {
+      position: relative;
+      color: rgba(255,255,255,.72);
+    }
+
+    .doc-card.active {
+      border-color: rgba(255,240,184,.6);
+      background: linear-gradient(145deg, rgba(216,180,90,.18), rgba(255,255,255,.08));
+    }
+
+    .doc-badge {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      width: 38px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #08271f;
+      background: var(--gold-2);
+      font-weight: 900;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+      counter-reset: steps;
+    }
+
+    .timeline-step {
+      position: relative;
+      padding: 24px 22px 24px 86px;
+      min-height: 116px;
+      border: 1px solid rgba(6,47,37,.12);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 16px 45px rgba(6,47,37,.08);
+      counter-increment: steps;
+    }
+
+    .timeline-step::before {
+      content: counter(steps);
+      position: absolute;
+      left: 22px;
+      top: 24px;
+      width: 42px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #08271f;
+      background: linear-gradient(145deg, var(--gold-2), var(--gold));
+      font-weight: 900;
+    }
+
+    .timeline-step h3 {
+      color: var(--emerald);
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      margin-bottom: 6px;
+    }
+
+    .timeline-step p {
+      color: rgba(16,34,29,.67);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .gallery-item {
+      position: relative;
+      min-height: 260px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: #12362d;
+    }
+
+    .gallery-item.tall {
+      min-height: 360px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      transition: transform .55s ease, filter .55s ease;
+    }
+
+    .gallery-item::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius);
+      color: var(--gold-2);
+      background: rgba(3,22,18,.54);
+      backdrop-filter: blur(16px);
+      font-weight: 800;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    .testimonials {
+      overflow: hidden;
+    }
+
+    .testimonial-shell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-track {
+      display: flex;
+      transition: transform .55s ease;
+    }
+
+    .testimonial-card {
+      flex: 0 0 100%;
+      min-height: 285px;
+      padding: 28px;
+    }
+
+    .testimonial-card p {
+      position: relative;
+      color: rgba(255,255,255,.78);
+      font-size: 1.03rem;
+    }
+
+    .stars {
+      position: relative;
+      color: var(--gold-2);
+      font-size: 1.05rem;
+      letter-spacing: .08em;
+      margin-bottom: 18px;
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .slider-dot {
+      width: 10px;
+      height: 10px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,.28);
+      cursor: pointer;
+    }
+
+    .slider-dot.active {
+      background: var(--gold);
+    }
+
+    .contact {
+      padding-bottom: 96px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 18% 18%, rgba(216,180,90,.22), transparent 20rem),
+        linear-gradient(180deg, #f7faf7, #e9f1ec);
+    }
+
+    .contact h2 {
+      color: var(--emerald);
+    }
+
+    .contact-wrap {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-card {
+      padding: clamp(24px, 5vw, 42px);
+      border: 1px solid rgba(6,47,37,.13);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.76);
+      box-shadow: 0 18px 58px rgba(6,47,37,.1);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 15px;
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .contact-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      color: rgba(16,34,29,.73);
+      font-weight: 700;
+    }
+
+    .contact-list svg {
+      width: 22px;
+      height: 22px;
+      color: var(--emerald-3);
+      flex: 0 0 auto;
+      margin-top: 2px;
+    }
+
+    .contact-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .map-card {
+      position: relative;
+      min-height: 330px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 25% 24%, rgba(255,240,184,.2), transparent 11rem),
+        linear-gradient(145deg, rgba(4,30,24,.96), rgba(10,74,56,.88));
+      overflow: hidden;
+    }
+
+    .map-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: radial-gradient(circle at center, black, transparent 74%);
+      opacity: .7;
+    }
+
+    .map-card::after {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      background: linear-gradient(145deg, var(--gold-2), var(--gold));
+      box-shadow: 0 0 32px rgba(216,180,90,.42);
+    }
+
+    .map-card strong {
+      position: relative;
+      z-index: 1;
+      display: block;
+      color: var(--gold-2);
+      font-family: var(--serif);
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .map-card p {
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      padding: 26px 18px;
+      color: rgba(255,255,255,.68);
+      text-align: center;
+      background: #031813;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 45;
+      width: 58px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: #21b35b;
+      box-shadow: 0 18px 42px rgba(0,0,0,.28), 0 0 0 8px rgba(33,179,91,.14);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    .whatsapp-float svg {
+      width: 29px;
+      height: 29px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 18px 42px rgba(0,0,0,.28), 0 0 0 8px rgba(33,179,91,.14); }
+      50% { transform: scale(1.06); box-shadow: 0 22px 50px rgba(0,0,0,.34), 0 0 0 14px rgba(33,179,91,.08); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 680px) {
+      .service-grid,
+      .doc-grid,
+      .contact-wrap {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .doc-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-auto-rows: 190px;
+      }
+
+      .gallery-item,
+      .gallery-item.tall {
+        min-height: auto;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 2;
+      }
+
+      .gallery-item.tall {
+        grid-row: span 2;
+      }
+
+      .stats {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .timeline {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .timeline-step {
+        padding: 78px 20px 24px;
+      }
+
+      .timeline-step::before {
+        top: 22px;
+      }
+    }
+
+    @media (min-width: 980px) {
+      .nav,
+      .header-call {
+        display: flex;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr) 360px;
+      }
+
+      .hero-proof {
+        position: absolute;
+        right: clamp(32px, 5vw, 78px);
+        bottom: 62px;
+        grid-template-columns: 1fr;
+        width: 300px;
+      }
+
+      .testimonial-card {
+        flex-basis: calc(50% - 9px);
+        margin-right: 18px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .brand-icon {
+        width: 38px;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-proof {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body class="loading">
+  <div class="preloader" aria-hidden="true">
+    <div class="loader-mark">MT</div>
+  </div>
+
+  <header class="site-header" aria-label="Main navigation">
+    <a class="brand" href="#home" aria-label="Malik Tours and Travels home">
+      <span class="brand-icon">MT</span>
+      <span class="brand-text">
+        <strong>Malik Tours &amp; Travels</strong>
+        <span>Umrah Visa Processing</span>
+      </span>
+    </a>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#documents">Documents</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-call" href="tel:+919329261555">Call 9329261555</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="lanterns" aria-hidden="true">
+        <span class="lantern" style="--top:18%;--left:74%;--speed:5.6s;--size:54px"></span>
+        <span class="lantern" style="--top:34%;--left:88%;--speed:6.4s;--size:42px"></span>
+        <span class="lantern" style="--top:16%;--left:45%;--speed:7s;--size:36px"></span>
+      </div>
+      <div class="hero-content fade-up">
+        <div class="kicker">Trusted Umrah Visa Service</div>
+        <h1>Planning Umrah with Family &amp; Friends?</h1>
+        <p class="hero-subtitle">Fast, Reliable &amp; Affordable Umrah Visa Processing</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/919329261555?text=Assalamu%20Alaikum%2C%20I%20want%20Umrah%20visa%20processing%20details." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.7a8 8 0 0 1-11.85 7.02L4 20l1.36-4A8 8 0 1 1 20 11.7Z" stroke="currentColor" stroke-width="2"/><path d="M9.3 8.5c.18-.4.35-.42.68-.42h.5c.16 0 .39.06.6.48.22.52.75 1.8.82 1.94.06.13.1.29.02.47-.2.4-.42.64-.72.98-.14.16-.29.33-.12.6.17.27.77 1.27 1.65 2.05 1.14 1.01 2.06 1.33 2.36 1.48.24.12.44.1.61-.1.2-.24.7-.82.89-1.1.2-.27.38-.22.64-.13.26.1 1.66.78 1.94.92.29.14.48.21.55.33.06.12.06.7-.16 1.38-.22.68-1.25 1.3-1.74 1.34-.47.03-1.06.2-3.46-.8-2.92-1.22-4.77-4.22-4.92-4.42-.14-.2-1.17-1.56-1.17-2.97 0-1.42.74-2.12 1.02-2.4Z" fill="currentColor"/></svg>
+            WhatsApp Now
+          </a>
+          <a class="btn btn-secondary" href="tel:+919329261555">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7.2 4.5 9 4.1c.8-.18 1.6.22 1.9.98l.8 1.93c.28.68.1 1.46-.43 1.96l-.93.86a12.02 12.02 0 0 0 3.83 3.83l.86-.93c.5-.54 1.28-.71 1.96-.43l1.93.8c.76.31 1.16 1.1.98 1.9l-.4 1.8A2.1 2.1 0 0 1 17.46 20C10.03 20 4 13.97 4 6.54A2.1 2.1 0 0 1 7.2 4.5Z" stroke="currentColor" stroke-width="2"/></svg>
+            Call Us
+          </a>
+        </div>
+      </div>
+      <div class="hero-proof fade-up">
+        <div class="proof-pill"><strong>Quick Process</strong>Document guidance to final approval</div>
+        <div class="proof-pill"><strong>Satna Office</strong>Hospital Chowk, Satna M.P.</div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-inner">
+        <div class="section-head fade-up">
+          <div class="section-eyebrow">Visa Services</div>
+          <h2>Premium Umrah visa support for every journey.</h2>
+          <p>Choose individual assistance or coordinated group processing with clear documentation and personal guidance.</p>
+        </div>
+        <div class="grid service-grid">
+          <article class="glass-card service-card fade-up">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="2"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3>Individual Visa</h3>
+            <ul class="feature-list">
+              <li><span>&#10003;</span> Flexible travel dates</li>
+              <li><span>&#10003;</span> Quick processing</li>
+              <li><span>&#10003;</span> Personal assistance</li>
+              <li><span>&#10003;</span> Affordable rates</li>
+            </ul>
+          </article>
+          <article class="glass-card service-card fade-up">
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M8 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM16 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z" stroke="currentColor" stroke-width="2"/><path d="M2.8 20a5.2 5.2 0 0 1 10.4 0M10.8 20a5.2 5.2 0 0 1 10.4 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3>Group Visa</h3>
+            <ul class="feature-list">
+              <li><span>&#10003;</span> Family packages</li>
+              <li><span>&#10003;</span> Group discounts</li>
+              <li><span>&#10003;</span> Hassle-free processing</li>
+              <li><span>&#10003;</span> Dedicated support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-light" id="why">
+      <div class="section-inner">
+        <div class="section-head fade-up">
+          <div class="section-eyebrow">Why Choose Us</div>
+          <h2>Reliable service, warm guidance, clear updates.</h2>
+          <p>Our team keeps the process simple and responsive so families can focus on their journey.</p>
+        </div>
+        <div class="stats">
+          <div class="stat-card fade-up"><div class="stat-value"><span data-count="1000">0</span>+</div><div class="stat-label">Happy Customers</div></div>
+          <div class="stat-card fade-up"><div class="stat-value"><span data-count="500">0</span>+</div><div class="stat-label">Visas Processed</div></div>
+          <div class="stat-card fade-up"><div class="stat-value">24/7</div><div class="stat-label">Support</div></div>
+          <div class="stat-card fade-up"><div class="stat-value">Fast</div><div class="stat-label">Approval</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="documents" id="documents">
+      <div class="section-inner">
+        <div class="section-head fade-up">
+          <div class="section-eyebrow">Documents Required</div>
+          <h2>Keep these ready for faster processing.</h2>
+          <p>Tap a card to highlight each requirement while preparing your application file.</p>
+        </div>
+        <div class="grid doc-grid">
+          <article class="glass-card doc-card fade-up active" tabindex="0">
+            <span class="doc-badge">1</span>
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 3h8l4 4v14H7V3Z" stroke="currentColor" stroke-width="2"/><path d="M15 3v5h5M10 13h6M10 17h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3>Passport Copy</h3>
+            <p>Clear passport copy with valid details and enough validity for the travel period.</p>
+          </article>
+          <article class="glass-card doc-card fade-up" tabindex="0">
+            <span class="doc-badge">2</span>
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v13H4V7Z" stroke="currentColor" stroke-width="2"/><path d="m8 16 2.2-2.2 1.8 1.7 3-3.5L20 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M8 10h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></div>
+            <h3>White Background Photo</h3>
+            <p>Recent passport-size photograph on white background for visa documentation.</p>
+          </article>
+          <article class="glass-card doc-card fade-up" tabindex="0">
+            <span class="doc-badge">3</span>
+            <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="2"/><path d="M7 10h4M7 14h7M16 10h1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3>PAN Card</h3>
+            <p>Valid PAN card copy for verification and supporting identity records.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-light" id="process">
+      <div class="section-inner">
+        <div class="section-head fade-up">
+          <div class="section-eyebrow">Process Timeline</div>
+          <h2>Four clear steps from documents to approval.</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-step fade-up"><h3>Submit Documents</h3><p>Share passport copy, photo and PAN card.</p></article>
+          <article class="timeline-step fade-up"><h3>Verification</h3><p>Details are checked and prepared for processing.</p></article>
+          <article class="timeline-step fade-up"><h3>Visa Processing</h3><p>Your Umrah visa application is submitted through the required channel.</p></article>
+          <article class="timeline-step fade-up"><h3>Approval</h3><p>Receive confirmation and travel-ready guidance.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="section-inner">
+        <div class="section-head fade-up">
+          <div class="section-eyebrow">Gallery</div>
+          <h2>Sacred destinations, thoughtfully arranged.</h2>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item tall fade-up" data-label="Kaaba, Makkah"><img alt="The Kaaba in Makkah" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Kaaba%2C_Makkah3.jpg/1280px-Kaaba%2C_Makkah3.jpg" loading="lazy" /></figure>
+          <figure class="gallery-item wide fade-up" data-label="Masjid Al Haram"><img alt="Pilgrims near Masjid Al Haram and the Kaaba" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Masjid_al-Haram%2C_Tawaf_20092012_1130PM_%288008466944%29.jpg" loading="lazy" /></figure>
+          <figure class="gallery-item fade-up" data-label="Madinah - Masjid an-Nabawi"><img alt="Al Masjid an Nabawi in Madinah" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Al_Masjid_an_Nabawi.jpg/1280px-Al_Masjid_an_Nabawi.jpg" loading="lazy" /></figure>
+          <figure class="gallery-item fade-up" data-label="Umrah Ihram"><img alt="Pilgrim wearing ihram for Umrah near the Grand Mosque" src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Ihram_for_umrah.JPG" loading="lazy" /></figure>
+          <figure class="gallery-item wide fade-up" data-label="Visa Documentation"><img alt="Passport on a world map for visa documentation" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Passport-flag-travel-visa-2642170.jpg/1280px-Passport-flag-travel-visa-2642170.jpg" loading="lazy" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="section-inner">
+        <div class="section-head fade-up">
+          <div class="section-eyebrow">Testimonials</div>
+          <h2>Trusted by families and groups.</h2>
+        </div>
+        <div class="testimonial-shell fade-up">
+          <div class="testimonial-track">
+            <article class="glass-card testimonial-card">
+              <div class="stars">*****</div>
+              <h3>Excellent service</h3>
+              <p>Our family visa process was handled smoothly. The team explained every document clearly and kept us updated.</p>
+            </article>
+            <article class="glass-card testimonial-card">
+              <div class="stars">*****</div>
+              <h3>Quick and reliable</h3>
+              <p>We needed urgent processing and Malik Tours &amp; Travels managed it professionally with quick response.</p>
+            </article>
+            <article class="glass-card testimonial-card">
+              <div class="stars">*****</div>
+              <h3>Helpful guidance</h3>
+              <p>From document checking to approval, everything was simple. Very supportive service for first-time travelers.</p>
+            </article>
+          </div>
+          <div class="slider-dots" aria-label="Testimonial controls"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-inner">
+        <div class="section-head fade-up">
+          <div class="section-eyebrow">Contact</div>
+          <h2>Start your Umrah visa process today.</h2>
+          <p>Speak directly with Malik Tours &amp; Travels for individual and group visa assistance.</p>
+        </div>
+        <div class="contact-wrap">
+          <div class="contact-card fade-up">
+            <h2>Imran Khan Abbasi</h2>
+            <ul class="contact-list">
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M7.2 4.5 9 4.1c.8-.18 1.6.22 1.9.98l.8 1.93c.28.68.1 1.46-.43 1.96l-.93.86a12.02 12.02 0 0 0 3.83 3.83l.86-.93c.5-.54 1.28-.71 1.96-.43l1.93.8c.76.31 1.16 1.1.98 1.9l-.4 1.8A2.1 2.1 0 0 1 17.46 20C10.03 20 4 13.97 4 6.54A2.1 2.1 0 0 1 7.2 4.5Z" stroke="currentColor" stroke-width="2"/></svg><span>9329261555</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.3 7-11A7 7 0 1 0 5 10c0 5.7 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg><span>Hospital Chowk, Satna M.P.</span></li>
+            </ul>
+            <div class="contact-actions">
+              <a class="btn btn-primary" href="https://wa.me/919329261555?text=Assalamu%20Alaikum%2C%20please%20share%20Umrah%20visa%20processing%20details." target="_blank" rel="noopener">WhatsApp Now</a>
+              <a class="btn btn-secondary" style="color:var(--emerald);border-color:rgba(6,47,37,.22)" href="tel:+919329261555">Call Us</a>
+            </div>
+          </div>
+          <div class="contact-card map-card fade-up">
+            <div>
+              <strong>Satna</strong>
+              <p>Hospital Chowk, Madhya Pradesh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Malik Tours &amp; Travels. Umrah Visa Processing Service.</p>
+    <p style="margin-top:6px;font-size:.78rem">Imagery: Moataz Egbaria, Basheer Olakara, Aymanzaid2, Rammaum and Cytis via Wikimedia Commons.</p>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/919329261555?text=Assalamu%20Alaikum%2C%20I%20want%20Umrah%20visa%20processing%20details." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 11.7a8 8 0 0 1-11.85 7.02L4 20l1.36-4A8 8 0 1 1 20 11.7Z" stroke="currentColor" stroke-width="2"/><path d="M9.3 8.5c.18-.4.35-.42.68-.42h.5c.16 0 .39.06.6.48.22.52.75 1.8.82 1.94.06.13.1.29.02.47-.2.4-.42.64-.72.98-.14.16-.29.33-.12.6.17.27.77 1.27 1.65 2.05 1.14 1.01 2.06 1.33 2.36 1.48.24.12.44.1.61-.1.2-.24.7-.82.89-1.1.2-.27.38-.22.64-.13.26.1 1.66.78 1.94.92.29.14.48.21.55.33.06.12.06.7-.16 1.38-.22.68-1.25 1.3-1.74 1.34-.47.03-1.06.2-3.46-.8-2.92-1.22-4.77-4.22-4.92-4.42-.14-.2-1.17-1.56-1.17-2.97 0-1.42.74-2.12 1.02-2.4Z" fill="currentColor"/></svg>
+  </a>
+
+  <script>
+    const body = document.body;
+    const preloader = document.querySelector(".preloader");
+    const hero = document.querySelector(".hero");
+    const revealItems = document.querySelectorAll(".fade-up");
+    const counterItems = document.querySelectorAll("[data-count]");
+    const docCards = document.querySelectorAll(".doc-card");
+    const track = document.querySelector(".testimonial-track");
+    const testimonialCards = document.querySelectorAll(".testimonial-card");
+    const dotsWrap = document.querySelector(".slider-dots");
+
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        preloader.classList.add("hide");
+        body.classList.remove("loading");
+      }, 450);
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const duration = 1500;
+        const start = performance.now();
+
+        const tick = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target).toLocaleString("en-IN");
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+
+        requestAnimationFrame(tick);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.55 });
+
+    counterItems.forEach((item) => counterObserver.observe(item));
+
+    window.addEventListener("scroll", () => {
+      const offset = Math.min(window.scrollY * 0.18, 80);
+      hero.style.setProperty("--parallax", offset + "px");
+    }, { passive: true });
+
+    docCards.forEach((card) => {
+      const activate = () => {
+        docCards.forEach((item) => item.classList.remove("active"));
+        card.classList.add("active");
+      };
+      card.addEventListener("click", activate);
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          activate();
+        }
+      });
+    });
+
+    let activeSlide = 0;
+    const visibleCards = () => window.matchMedia("(min-width: 980px)").matches ? 2 : 1;
+    const slideCount = () => Math.max(testimonialCards.length - visibleCards() + 1, 1);
+
+    const renderDots = () => {
+      dotsWrap.innerHTML = "";
+      for (let i = 0; i < slideCount(); i += 1) {
+        const button = document.createElement("button");
+        button.className = "slider-dot" + (i === activeSlide ? " active" : "");
+        button.type = "button";
+        button.setAttribute("aria-label", "Show testimonial " + (i + 1));
+        button.addEventListener("click", () => {
+          activeSlide = i;
+          updateSlider();
+        });
+        dotsWrap.appendChild(button);
+      }
+    };
+
+    const updateSlider = () => {
+      activeSlide = activeSlide % slideCount();
+      const cardWidth = testimonialCards[0].getBoundingClientRect().width + (visibleCards() === 2 ? 18 : 0);
+      track.style.transform = "translateX(" + (-activeSlide * cardWidth) + "px)";
+      [...dotsWrap.children].forEach((dot, index) => dot.classList.toggle("active", index === activeSlide));
+    };
+
+    renderDots();
+    updateSlider();
+    setInterval(() => {
+      activeSlide = (activeSlide + 1) % slideCount();
+      updateSlider();
+    }, 4200);
+
+    window.addEventListener("resize", () => {
+      activeSlide = Math.min(activeSlide, slideCount() - 1);
+      renderDots();
+      updateSlider();
+    });
+  </script>
+</body>
+</html>
