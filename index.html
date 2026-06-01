@@ -82,211 +82,122 @@
       visibility: hidden;
     }
 
+    .site-shell {
+      transition: filter .45s ease, transform .45s ease;
+    }
+
+    body.intro-active {
+      overflow: hidden;
+    }
+
+    body.intro-active .site-shell {
+      filter: blur(9px) brightness(.58);
+      transform: scale(1.01);
+      pointer-events: none;
+      user-select: none;
+    }
+
     .welcome-greeter {
       position: fixed;
-      inset: auto 14px 18px 14px;
-      z-index: 70;
+      inset: 0;
+      z-index: 80;
       display: grid;
-      grid-template-columns: 92px minmax(0, 1fr);
-      gap: 14px;
-      align-items: center;
-      width: min(460px, calc(100% - 28px));
-      padding: 14px;
-      border: 1px solid rgba(255,240,184,.34);
-      border-radius: 18px;
+      place-items: center;
+      padding: clamp(18px, 4vw, 44px);
       color: var(--white);
-      background: linear-gradient(145deg, rgba(4,30,24,.9), rgba(10,74,56,.78));
-      backdrop-filter: blur(18px);
-      box-shadow: 0 24px 70px rgba(0,0,0,.38), inset 0 0 28px rgba(255,240,184,.08);
+      background:
+        radial-gradient(circle at 50% 22%, rgba(216,180,90,.2), transparent 22rem),
+        linear-gradient(180deg, rgba(2,18,15,.3), rgba(2,18,15,.66));
       opacity: 0;
-      transform: translateY(24px) scale(.97);
-      pointer-events: none;
-      transition: opacity .45s ease, transform .45s ease, visibility .45s ease;
       visibility: hidden;
+      pointer-events: none;
+      transition: opacity .55s ease, visibility .55s ease;
     }
 
     .welcome-greeter.show {
       opacity: 1;
-      transform: translateY(0) scale(1);
-      pointer-events: auto;
       visibility: visible;
+      pointer-events: auto;
     }
 
-    .greeter-art {
-      position: relative;
-      width: 92px;
-      aspect-ratio: 1;
+    .welcome-stage {
+      width: min(580px, 100%);
       display: grid;
-      place-items: center;
-      border-radius: 20px;
-      background:
-        radial-gradient(circle at 40% 30%, rgba(255,255,255,.16), transparent 36%),
-        rgba(255,255,255,.07);
-      overflow: hidden;
+      justify-items: center;
+      gap: 14px;
+      text-align: center;
+      transform: translateY(18px) scale(.98);
+      transition: transform .55s ease;
     }
 
-    .guide-head {
-      position: relative;
-      width: 58px;
-      height: 64px;
-      border-radius: 48% 48% 46% 46%;
-      background: linear-gradient(180deg, #f1c9a0, #d99569);
-      box-shadow: inset 0 -9px 14px rgba(89,44,22,.12);
+    .welcome-greeter.show .welcome-stage {
+      transform: translateY(0) scale(1);
     }
 
-    .guide-head::before {
-      content: "";
-      position: absolute;
-      left: 4px;
-      right: 4px;
-      top: -8px;
-      height: 22px;
-      border-radius: 22px 22px 10px 10px;
-      background: linear-gradient(180deg, #fff, #e9eef0);
-      box-shadow: inset 0 -2px 0 rgba(0,0,0,.07);
+    .welcome-character {
+      width: min(330px, 76vw);
+      max-height: 58vh;
+      object-fit: contain;
+      filter: drop-shadow(0 30px 48px rgba(0,0,0,.45));
+      animation: characterFloat 3.8s ease-in-out infinite;
     }
 
-    .guide-head::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: 7px;
-      width: 18px;
-      height: 8px;
-      transform: translateX(-50%);
-      border-bottom: 3px solid #5f2f20;
-      border-radius: 0 0 18px 18px;
+    @keyframes characterFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
 
-    .guide-eye {
-      position: absolute;
-      top: 29px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #1f2a25;
-      box-shadow: 0 0 0 3px rgba(255,255,255,.42);
-    }
-
-    .guide-eye.left {
-      left: 16px;
-    }
-
-    .guide-eye.right {
-      right: 16px;
-    }
-
-    .guide-beard {
-      position: absolute;
-      left: 50%;
-      bottom: -9px;
-      width: 34px;
-      height: 22px;
-      transform: translateX(-50%);
-      border-radius: 0 0 22px 22px;
-      background: #fff;
-      box-shadow: inset 0 -4px 0 rgba(0,0,0,.05);
-    }
-
-    .guide-hand {
-      position: absolute;
-      left: 8px;
-      top: 10px;
-      width: 26px;
-      height: 34px;
-      border-radius: 16px 16px 12px 12px;
-      background: linear-gradient(180deg, #f2c39b, #d99569);
-      transform-origin: 50% 100%;
-      animation: waveHand 1.25s ease-in-out infinite;
-      box-shadow: 0 8px 14px rgba(0,0,0,.18);
-    }
-
-    .guide-hand::before {
-      content: "";
-      position: absolute;
-      inset: -8px 5px auto;
-      height: 15px;
-      border-radius: 14px 14px 0 0;
-      background: inherit;
-    }
-
-    .guide-hand::after {
-      content: "";
-      position: absolute;
-      left: 10px;
-      bottom: -14px;
-      width: 10px;
-      height: 18px;
-      border-radius: 999px;
-      background: #122c26;
-    }
-
-    @keyframes waveHand {
-      0%, 100% { transform: rotate(-16deg); }
-      50% { transform: rotate(14deg); }
-    }
-
-    .greeter-copy {
-      min-width: 0;
+    .welcome-bubble {
+      width: min(560px, 100%);
+      padding: clamp(18px, 4vw, 26px);
+      border: 1px solid rgba(255,240,184,.35);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(4,30,24,.92), rgba(10,74,56,.8));
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 70px rgba(0,0,0,.38), inset 0 0 28px rgba(255,240,184,.08);
     }
 
     .greeter-arabic {
       color: var(--gold-2);
       font-family: "Times New Roman", var(--serif);
-      font-size: clamp(1.22rem, 4.8vw, 1.7rem);
+      font-size: clamp(2.3rem, 10vw, 4.6rem);
       font-weight: 800;
-      line-height: 1.15;
+      line-height: 1.05;
       direction: rtl;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
 
-    .greeter-urdu {
-      color: rgba(255,255,255,.88);
-      font-family: "Noto Nastaliq Urdu", "Times New Roman", var(--serif);
-      font-size: 1rem;
-      line-height: 1.45;
-      direction: rtl;
+    .greeter-hinglish {
+      color: rgba(255,255,255,.9);
+      font-size: clamp(1.02rem, 3.4vw, 1.35rem);
+      font-weight: 800;
     }
 
-    .greeter-actions {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .greeter-play,
-    .greeter-close {
-      border: 1px solid rgba(255,240,184,.32);
-      color: var(--gold-2);
-      background: rgba(255,255,255,.08);
-      cursor: pointer;
-      transition: transform .2s ease, background .2s ease;
+    .greeter-status {
+      min-height: 20px;
+      margin-top: 12px;
+      color: rgba(255,255,255,.68);
+      font-size: .9rem;
     }
 
     .greeter-play {
-      min-height: 34px;
-      padding: 0 12px;
+      display: none;
+      min-height: 42px;
+      margin: 14px auto 0;
+      padding: 0 18px;
+      border: 1px solid rgba(255,240,184,.48);
       border-radius: 999px;
-      font-weight: 800;
-      font-size: .82rem;
+      color: #08271f;
+      background: linear-gradient(135deg, var(--gold-2), var(--gold));
+      cursor: pointer;
+      font-weight: 900;
+      box-shadow: 0 16px 34px rgba(216,180,90,.22);
     }
 
-    .greeter-close {
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      font-size: 1.1rem;
-      line-height: 1;
-    }
-
-    .greeter-play:hover,
-    .greeter-close:hover {
-      transform: translateY(-1px);
-      background: rgba(255,255,255,.13);
+    .welcome-greeter.needs-tap .greeter-play {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .loader-mark {
@@ -1146,12 +1057,6 @@
     }
 
     @media (min-width: 680px) {
-      .welcome-greeter {
-        left: 24px;
-        right: auto;
-        bottom: 24px;
-      }
-
       .service-grid,
       .doc-grid,
       .contact-wrap {
@@ -1222,19 +1127,6 @@
     }
 
     @media (max-width: 420px) {
-      .welcome-greeter {
-        grid-template-columns: 78px minmax(0, 1fr);
-        padding: 12px;
-      }
-
-      .greeter-art {
-        width: 78px;
-      }
-
-      .guide-head {
-        transform: scale(.86);
-      }
-
       .brand-icon {
         width: 38px;
       }
@@ -1270,25 +1162,19 @@
   </div>
 
   <div class="welcome-greeter" role="dialog" aria-label="Welcome greeting" aria-live="polite">
-    <button class="greeter-close" type="button" aria-label="Close greeting">&times;</button>
-    <div class="greeter-art" aria-hidden="true">
-      <span class="guide-hand"></span>
-      <span class="guide-head">
-        <span class="guide-eye left"></span>
-        <span class="guide-eye right"></span>
-        <span class="guide-beard"></span>
-      </span>
-    </div>
-    <div class="greeter-copy">
-      <div class="greeter-arabic" lang="ar" dir="rtl">السلام عليكم</div>
-      <div class="greeter-urdu" lang="ur" dir="rtl">ملک ٹورز اینڈ ٹریولز میں آپ کا خیر مقدم ہے</div>
-      <div class="greeter-actions">
-        <button class="greeter-play" type="button">Play Greeting</button>
+    <div class="welcome-stage">
+      <img class="welcome-character" src="welcome-character.png" alt="Malik Tours and Travels welcome guide" />
+      <div class="welcome-bubble">
+        <div class="greeter-arabic" lang="ar" dir="rtl">السلام عليكم</div>
+        <div class="greeter-hinglish">Malik Tours &amp; Travels me aapka khair maqdam</div>
+        <div class="greeter-status">Greeting is playing...</div>
+        <button class="greeter-play" type="button">Tap to Hear Greeting</button>
       </div>
     </div>
   </div>
-  <audio class="greeting-audio" src="greeting.wav" preload="auto"></audio>
+  <audio class="greeting-audio" src="welcome-greeting.wav" preload="auto"></audio>
 
+  <div class="site-shell">
   <header class="site-header" aria-label="Main navigation">
     <a class="brand" href="#home" aria-label="Malik Tours and Travels home">
       <span class="brand-icon">MT</span>
@@ -1508,13 +1394,14 @@
   <a class="whatsapp-float" href="https://wa.me/919329261555?text=Assalamu%20Alaikum%2C%20I%20want%20Umrah%20visa%20processing%20details." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M16.02 3.2A12.73 12.73 0 0 0 5.06 22.4L3.2 29l6.78-1.78A12.72 12.72 0 1 0 16.02 3.2Zm0 23.3c-1.92 0-3.8-.52-5.44-1.5l-.39-.23-4.02 1.05 1.08-3.92-.25-.4a10.55 10.55 0 1 1 9.02 5Zm5.78-7.9c-.32-.16-1.88-.93-2.17-1.03-.29-.11-.5-.16-.71.16-.21.32-.81 1.03-1 1.24-.18.22-.37.24-.69.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.76-2.2-.19-.32-.02-.49.14-.65.14-.14.32-.37.48-.55.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.56-.08-.16-.71-1.71-.98-2.35-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.11 1.09-1.11 2.65s1.14 3.08 1.3 3.29c.16.21 2.24 3.42 5.43 4.8.76.33 1.35.52 1.81.67.76.24 1.45.21 2 .13.61-.09 1.88-.77 2.15-1.51.27-.74.27-1.38.19-1.51-.08-.14-.29-.22-.61-.38Z"/></svg>
   </a>
+  </div>
 
   <script>
     const body = document.body;
     const preloader = document.querySelector(".preloader");
     const greeter = document.querySelector(".welcome-greeter");
     const greeterPlay = document.querySelector(".greeter-play");
-    const greeterClose = document.querySelector(".greeter-close");
+    const greeterStatus = document.querySelector(".greeter-status");
     const greetingAudio = document.querySelector(".greeting-audio");
     const hero = document.querySelector(".hero");
     const revealItems = document.querySelectorAll(".fade-up");
@@ -1532,56 +1419,44 @@
       }, 450);
     });
 
-    const greetingText = "Assalamu Alaikum. Malik Tours and Travels mein aapka khair maqdam hai.";
-    let greetingSpoken = false;
-
-    const speakGreeting = () => {
-      if (!("speechSynthesis" in window)) return false;
-      window.speechSynthesis.cancel();
-      const utterance = new SpeechSynthesisUtterance(greetingText);
-      const voices = window.speechSynthesis.getVoices();
-      utterance.voice = voices.find((voice) => /hi|ur|en-IN/i.test(voice.lang)) || voices[0] || null;
-      utterance.lang = utterance.voice?.lang || "hi-IN";
-      utterance.rate = .86;
-      utterance.pitch = 1;
-      utterance.volume = .92;
-      window.speechSynthesis.speak(utterance);
-      greetingSpoken = true;
-      return true;
-    };
-
-    const playGreeting = async () => {
-      if (greetingAudio) {
-        try {
-          greetingAudio.currentTime = 0;
-          await greetingAudio.play();
-          greetingSpoken = true;
-          return;
-        } catch (error) {
-          speakGreeting();
-          return;
-        }
-      }
-      speakGreeting();
-    };
-
     const showGreeting = () => {
+      body.classList.add("intro-active");
       greeter.classList.add("show");
-      setTimeout(() => playGreeting(), 650);
+      setTimeout(() => playGreeting(), 350);
     };
 
-    greeterPlay.addEventListener("click", playGreeting);
-    greeterClose.addEventListener("click", () => {
+    const finishGreeting = () => {
       greeter.classList.remove("show");
-      if (greetingAudio) {
-        greetingAudio.pause();
-        greetingAudio.currentTime = 0;
+      body.classList.remove("intro-active");
+    };
+
+    const playGreeting = async (fromUser = false) => {
+      if (!greetingAudio) {
+        finishGreeting();
+        return;
       }
-      if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+
+      try {
+        greeter.classList.remove("needs-tap");
+        greeterStatus.textContent = "Greeting is playing...";
+        greetingAudio.currentTime = 0;
+        await greetingAudio.play();
+      } catch (error) {
+        greeter.classList.add("needs-tap");
+        greeterStatus.textContent = fromUser ? "Welcome to Malik Tours & Travels." : "Tap once to hear the welcome.";
+        if (fromUser) setTimeout(finishGreeting, 1600);
+      }
+    };
+
+    greeterPlay.addEventListener("click", () => playGreeting(true));
+    greetingAudio.addEventListener("ended", finishGreeting);
+    greetingAudio.addEventListener("error", () => {
+      greeterStatus.textContent = "Welcome to Malik Tours & Travels.";
+      setTimeout(finishGreeting, 1500);
     });
 
     document.addEventListener("pointerdown", () => {
-      if (greeter.classList.contains("show") && !greetingSpoken) playGreeting();
+      if (greeter.classList.contains("needs-tap")) playGreeting(true);
     }, { once: true });
 
     const revealObserver = new IntersectionObserver((entries) => {
