@@ -180,26 +180,6 @@
       font-size: .9rem;
     }
 
-    .greeter-play {
-      display: none;
-      min-height: 42px;
-      margin: 14px auto 0;
-      padding: 0 18px;
-      border: 1px solid rgba(255,240,184,.48);
-      border-radius: 999px;
-      color: #08271f;
-      background: linear-gradient(135deg, var(--gold-2), var(--gold));
-      cursor: pointer;
-      font-weight: 900;
-      box-shadow: 0 16px 34px rgba(216,180,90,.22);
-    }
-
-    .welcome-greeter.needs-tap .greeter-play {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .loader-mark {
       position: relative;
       width: 84px;
@@ -1168,11 +1148,10 @@
         <div class="greeter-arabic" lang="ar" dir="rtl">السلام عليكم</div>
         <div class="greeter-hinglish">Malik Tours &amp; Travels me aapka khair maqdam</div>
         <div class="greeter-status">Greeting is playing...</div>
-        <button class="greeter-play" type="button">Tap to Hear Greeting</button>
       </div>
     </div>
   </div>
-  <audio class="greeting-audio" src="welcome-greeting.wav" preload="auto"></audio>
+  <audio class="greeting-audio" src="welcome-greeting.wav" preload="auto" autoplay></audio>
 
   <div class="site-shell">
   <header class="site-header" aria-label="Main navigation">
@@ -1400,7 +1379,6 @@
     const body = document.body;
     const preloader = document.querySelector(".preloader");
     const greeter = document.querySelector(".welcome-greeter");
-    const greeterPlay = document.querySelector(".greeter-play");
     const greeterStatus = document.querySelector(".greeter-status");
     const greetingAudio = document.querySelector(".greeting-audio");
     const hero = document.querySelector(".hero");
@@ -1411,7 +1389,7 @@
     const testimonialCards = document.querySelectorAll(".testimonial-card");
     const dotsWrap = document.querySelector(".slider-dots");
 
-    window.addEventListener("load", () => {
+    window.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         preloader.classList.add("hide");
         body.classList.remove("loading");
@@ -1430,34 +1408,27 @@
       body.classList.remove("intro-active");
     };
 
-    const playGreeting = async (fromUser = false) => {
+    const playGreeting = async () => {
       if (!greetingAudio) {
         finishGreeting();
         return;
       }
 
       try {
-        greeter.classList.remove("needs-tap");
         greeterStatus.textContent = "Greeting is playing...";
         greetingAudio.currentTime = 0;
         await greetingAudio.play();
       } catch (error) {
-        greeter.classList.add("needs-tap");
-        greeterStatus.textContent = fromUser ? "Welcome to Malik Tours & Travels." : "Tap once to hear the welcome.";
-        if (fromUser) setTimeout(finishGreeting, 1600);
+        greeterStatus.textContent = "Welcome to Malik Tours & Travels.";
+        setTimeout(finishGreeting, 5000);
       }
     };
 
-    greeterPlay.addEventListener("click", () => playGreeting(true));
     greetingAudio.addEventListener("ended", finishGreeting);
     greetingAudio.addEventListener("error", () => {
       greeterStatus.textContent = "Welcome to Malik Tours & Travels.";
       setTimeout(finishGreeting, 1500);
     });
-
-    document.addEventListener("pointerdown", () => {
-      if (greeter.classList.contains("needs-tap")) playGreeting(true);
-    }, { once: true });
 
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
