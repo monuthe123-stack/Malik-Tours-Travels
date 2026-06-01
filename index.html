@@ -833,6 +833,12 @@
       overflow: hidden;
     }
 
+    .map-card > div {
+      position: relative;
+      z-index: 1;
+      padding: 0 18px;
+    }
+
     .map-card::before {
       content: "";
       position: absolute;
@@ -850,28 +856,31 @@
     .map-card::after {
       content: "";
       position: absolute;
+      left: 50%;
+      top: calc(50% + 76px);
       width: 30px;
       height: 30px;
       border-radius: 50% 50% 50% 0;
-      transform: rotate(-45deg);
+      transform: translateX(-50%) rotate(-45deg);
       background: linear-gradient(145deg, var(--gold-2), var(--gold));
       box-shadow: 0 0 32px rgba(216,180,90,.42);
+      opacity: .9;
     }
 
     .map-card strong {
-      position: relative;
-      z-index: 1;
       display: block;
       color: var(--gold-2);
       font-family: var(--serif);
-      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-size: clamp(1.55rem, 4.6vw, 2.65rem);
       line-height: 1;
       margin-bottom: 12px;
     }
 
     .map-card p {
-      position: relative;
-      z-index: 1;
+      max-width: 25ch;
+      margin: 0 auto;
+      color: rgba(255,255,255,.9);
+      font-weight: 700;
     }
 
     footer {
@@ -1074,7 +1083,7 @@
       </div>
       <div class="hero-proof fade-up">
         <div class="proof-pill"><strong>Quick Process</strong>Document guidance to final approval</div>
-        <div class="proof-pill"><strong>Satna Office</strong>Hospital Chowk, Satna M.P.</div>
+        <div class="proof-pill"><strong>Satna Office</strong>Hospital Chowk, Satna, Madhya Pradesh</div>
       </div>
     </section>
 
@@ -1228,7 +1237,7 @@
             <h2>Imran Khan Abbasi</h2>
             <ul class="contact-list">
               <li><svg viewBox="0 0 24 24" fill="none"><path d="M7.2 4.5 9 4.1c.8-.18 1.6.22 1.9.98l.8 1.93c.28.68.1 1.46-.43 1.96l-.93.86a12.02 12.02 0 0 0 3.83 3.83l.86-.93c.5-.54 1.28-.71 1.96-.43l1.93.8c.76.31 1.16 1.1.98 1.9l-.4 1.8A2.1 2.1 0 0 1 17.46 20C10.03 20 4 13.97 4 6.54A2.1 2.1 0 0 1 7.2 4.5Z" stroke="currentColor" stroke-width="2"/></svg><span>9329261555</span></li>
-              <li><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.3 7-11A7 7 0 1 0 5 10c0 5.7 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg><span>Hospital Chowk, Satna M.P.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s7-5.3 7-11A7 7 0 1 0 5 10c0 5.7 7 11 7 11Z" stroke="currentColor" stroke-width="2"/><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" stroke="currentColor" stroke-width="2"/></svg><span>Hospital Chowk, Satna, Madhya Pradesh</span></li>
             </ul>
             <div class="contact-actions">
               <a class="btn btn-primary" href="https://wa.me/919329261555?text=Assalamu%20Alaikum%2C%20please%20share%20Umrah%20visa%20processing%20details." target="_blank" rel="noopener">WhatsApp Now</a>
@@ -1237,8 +1246,8 @@
           </div>
           <div class="contact-card map-card fade-up">
             <div>
-              <strong>Satna</strong>
-              <p>Hospital Chowk, Madhya Pradesh</p>
+              <strong>Hospital Chowk</strong>
+              <p>Satna, Madhya Pradesh</p>
             </div>
           </div>
         </div>
